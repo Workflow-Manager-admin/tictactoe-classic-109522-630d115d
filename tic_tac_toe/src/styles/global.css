@@ -1,0 +1,53 @@
+:root {
+  --ttt-accent: #4caf50;
+  --ttt-board-bg: #252d37;
+  --ttt-cell-bg: #2f3b47;
+  --ttt-cell-border: #48505e;
+  --ttt-x-color: #00ffff;
+  --ttt-o-color: #4caf50;
+}
+
+/* Board base styles */
+.ttt-board {
+  display: grid;
+  grid-template-columns: repeat(3, 70px);
+  gap: 10px;
+  justify-content: center;
+  margin: 32px 0;
+}
+
+/* Cell base styles */
+.ttt-cell {
+  width: 70px;
+  height: 70px;
+  font-size: 2rem;
+  font-weight: bold;
+  background: var(--ttt-cell-bg);
+  border: 2px solid var(--ttt-cell-border);
+  border-radius: 6px;
+  color: var(--ttt-x-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+
+.ttt-cell.ttt-x {
+  color: var(--ttt-x-color);
+}
+.ttt-cell.ttt-o {
+  color: var(--ttt-o-color);
+}
+.ttt-cell:disabled {
+  background: #1a232c;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Game status styles */
+.ttt-status {
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
